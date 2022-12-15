@@ -8,7 +8,7 @@ const CurrentWeather = () => {
                 <p>Sunny</p>
             </section>
             <section>
-                <img src="" alt="weather" />
+                <img src="icons/01d.png" alt="weather" />
             </section>
         </div>
     )
