@@ -10,7 +10,8 @@
     "react-accessible-accordion": "^5.0.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "react-select-async-paginate": "^0.7.1",
+    "react-select": "^5.7.0",
+    "react-select-async-paginate": "^0.7.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
