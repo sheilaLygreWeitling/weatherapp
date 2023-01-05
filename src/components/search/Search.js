@@ -7,7 +7,7 @@ const Search = ({ onSearchChange }) => {
 
     const loadOptions = (inputValue) => {
         return fetch(
-            `${GEO_API_URL}/cities?&namePrefix=${inputValue}`,
+            `${GEO_API_URL}cities?&namePrefix=${inputValue}`,
             geoApiOptions
         )
             .then(response => response.json())
@@ -25,7 +25,6 @@ const Search = ({ onSearchChange }) => {
     };
 
 
-
     const handleOnChange = (searchData) => {
         setSearch(searchData);
         onSearchChange(searchData);
@@ -33,6 +32,7 @@ const Search = ({ onSearchChange }) => {
 
     return (
         <AsyncPaginate
+            className="search"
             placeholder="Search for city"
             debounceTimeout={600}
             value={search}

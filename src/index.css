@@ -6,7 +6,16 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: antiquewhite;
+  background-color: rgb(227, 244, 252);
   margin: 20px auto;
+  background-image: url("img/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
+.search {
+  padding: 0 30px;
+}
+
 
