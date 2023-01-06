@@ -36,9 +36,35 @@ const CurrentWeather = ({ data }) => {
                 <div className='md:p-5'>
                     <img src={`icons/${data.weather[0].icon}.png`} alt="weather" />
                 </div>
+                <div className='font-light hidden 
+                md:block md:text-center md:p-9 
+                lg:block lg:text-center lg:p-9 
+                xl:block xl:text-center xl:p-9'>
+                    <div>
+                        <span>Føles som</span>
+                        <span className='font-semibold'> {Math.round(data.main.feels_like)}°C</span>
+                    </div>
+                    <div>
+                        <span>Vind</span>
+                        <span className='font-semibold'> {Math.round(data.wind.speed)} m/s</span>
+                    </div>
+                    <div>
+                        <span>Luftfugtighed</span>
+                        <span className='font-semibold'>  {Math.round(data.main.humidity)}%</span>
+                    </div>
+                    <div>
+                        <span>Lufttryk</span>
+                        <span className='font-semibold'> {Math.round(data.main.pressure)} hPa</span>
+                    </div>
+                    {/*                     <div>
+                        <span>Regn</span>
+                        <span className='font-semibold'> {Math.round(data.rain["1h"])} mm </span>
+                    </div> */}
+                </div>
+
             </section>
 
-            <div className='dropdown block md:hidden'>
+            <div className='dropdown block md:hidden lg:hidden xl:hidden'>
                 <div className=" ">
                     <div className="">
                         <motion.button
@@ -55,45 +81,28 @@ const CurrentWeather = ({ data }) => {
                         <div className=' bg-[#E3F4FC] p-7 m-5 rounded-tl-lg rounded-bl-lg flex justify-between shadow-xl'>
                             <ul>
                                 <li>
-                                    <span>Feels like</span>
-                                    <span> {Math.round(data.main.feels_like)}°C</span>
+                                    <span>Føles som</span>
+                                    <span className='font-semibold'> {Math.round(data.main.feels_like)}°C</span>
                                 </li>
                                 <li>
-                                    <span>Wind</span>
-                                    <span> {Math.round(data.wind.speed)} m/s</span>
+                                    <span>Vind</span>
+                                    <span className='font-semibold'> {Math.round(data.wind.speed)} m/s</span>
                                 </li>
                                 <li>
-                                    <span>Humidity</span>
-                                    <span> {Math.round(data.main.humidity)}%</span>
+                                    <span>Luftfugtighed</span>
+                                    <span className='font-semibold'> {Math.round(data.main.humidity)}%</span>
                                 </li>
                                 <li>
-                                    <span>Pressure</span>
-                                    <span> {Math.round(data.main.pressure)} pHa</span>
+                                    <span>Lufttryk</span>
+                                    <span className='font-semibold'> {Math.round(data.main.pressure)} hPa</span>
                                 </li>
+                                {/*                                 <li>
+                                    <span>Regn</span>
+                                    <span className='font-semibold'> {Math.round(data.rain["1h"])} mm </span>
+                                </li> */}
                             </ul>
                         </div> : null}</AnimatePresence>
-
                 </div>
-                <section className='bg-[#00cccc] p-7 m-5 rounded-tl-lg rounded-bl-lg flex justify-between shadow-xl hidden md:block'>
-                    <div className='font-light'>
-                        <div>
-                            <span>Feels like</span>
-                            <span> 22 celsius</span>
-                        </div>
-                        <div>
-                            <span>Wind</span>
-                            <span> 2 m/s</span>
-                        </div>
-                        <div>
-                            <span>Humidity</span>
-                            <span>  20%</span>
-                        </div>
-                        <div>
-                            <span>Pressure</span>
-                            <span> 15 pHa</span>
-                        </div>
-                    </div>
-                </section >
             </div>
         </div >
     )

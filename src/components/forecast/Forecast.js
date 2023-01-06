@@ -1,7 +1,6 @@
 import React from 'react'
-/* import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from 'react-accessible-accordion' */
 
-const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+const weekDays = ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"]
 
 const Forecast = ({ data }) => {
 
@@ -12,12 +11,8 @@ const Forecast = ({ data }) => {
         <div className='bg-[#E3F4FC] p-7 m-5 rounded-tl-lg rounded-bl-lg shadow-xl'>
             <h1 className='text-2xl font-bold underline text-center'>Daily forecast</h1>
             <div className=' flex overflow-x-auto'>
-                {/*             <Accordion allowZeroExpanded> */}
                 {data.list.slice(0, 7).map((item, index) => (
-                    /*                     <AccordionItem key={index}>
-                                            <AccordionItemHeading>
-                                                <AccordionItemButton> */
-                    <div className='p-5 text-center'>
+                    <div className='p-5 text-center md:p-8 lg:p-8 xl:p-8'>
                         <div className='w-[128px] h-[128px]'>
                             <img src={`icons/${item.weather[0].icon}.png`} alt="weather" />
                         </div>
@@ -25,18 +20,7 @@ const Forecast = ({ data }) => {
                         <p>{item.weather[0].description}</p>
                         <p>{Math.round(item.main.temp)}°C</p>
                     </div>
-                    /*                             </AccordionItemButton>
-                                            </AccordionItemHeading>
-                    
-                                            <AccordionItemPanel>
-                                            </AccordionItemPanel>
-                                        </AccordionItem> */
                 ))}
-
-                {/*                 <AccordionItem>
-
-                </AccordionItem>
-            </Accordion> */}
             </div>
         </div>
     )
