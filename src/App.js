@@ -3,7 +3,7 @@ import { WEATHER_API_URL } from "./Api";
 import CurrentWeather from "./components/current-weather/CurrentWeather";
 import Forecast from "./components/forecast/Forecast";
 import Search from "./components/search/Search";
-import WeatherMap from "./components/weatherMap/WeatherMap";
+
 
 function App() {
   const API_KEY_WEATHER = process.env.REACT_APP_API_KEY_WEATHER;
