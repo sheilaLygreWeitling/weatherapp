@@ -9,7 +9,7 @@ const Forecast = ({ data }) => {
 
     return (
         <div className='bg-[#E3F4FC] p-7 m-5 rounded-tl-lg rounded-bl-lg shadow-xl'>
-            <h1 className='text-2xl font-bold underline text-center'>Daily forecast</h1>
+            <h1 className='text-2xl font-bold underline text-center'>Vejrudsigt</h1>
             <div className=' flex overflow-x-auto'>
                 {data.list.slice(0, 7).map((item, index) => (
                     <div className='p-5 text-center md:p-8 lg:p-8 xl:p-8'>
