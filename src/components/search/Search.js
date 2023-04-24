@@ -5,9 +5,9 @@ import { geoApiOptions, GEO_API_URL } from "../../Api";
 const Search = ({ onSearchChange }) => {
     const [search, setSearch] = useState(null);
 
-    async function loadOptions(inputValue, map) {
+    async function loadOptions(inputValue, city) {
         const response = await fetch(
-            `${GEO_API_URL}cities?&namePrefix=${inputValue}`,
+            `${GEO_API_URL}cities?&namePrefix=${inputValue || city}`,
             geoApiOptions
         );
         const data = await response.json();
@@ -19,10 +19,6 @@ const Search = ({ onSearchChange }) => {
                 };
             }),
 
-            hasMore: data.data.length > 0,
-            additional: {
-                page: 1,
-            },
         };
     }
 
