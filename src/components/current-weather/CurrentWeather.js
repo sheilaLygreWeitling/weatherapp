@@ -1,27 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { AnimatePresence, motion, usePresence } from "framer-motion"
-import { gsap } from "gsap";
-
+import React, { useState } from 'react'
+import { AnimatePresence, motion } from "framer-motion"
 const CurrentWeather = ({ data }) => {
 
-    function Box() {
-        const ref = useRef(null);
-        const [isPresent, safeToRemove] = usePresence();
-
-        useEffect(() => {
-            if (!isPresent) {
-                gsap.to(ref.current, {
-                    opacity: 0,
-                    onComplete: () => safeToRemove?.()
-                });
-            }
-        }, [isPresent, safeToRemove]);
-
-        return <div className="box" ref={ref} />;
-    }
-
     const [show, setShow] = useState(false);
-
 
     return (
         <div>
@@ -56,12 +37,7 @@ const CurrentWeather = ({ data }) => {
                         <span>Lufttryk</span>
                         <span className='font-semibold'> {Math.round(data.main.pressure)} hPa</span>
                     </div>
-                    {/*                     <div>
-                        <span>Regn</span>
-                        <span className='font-semibold'> {Math.round(data.rain["1h"])} mm </span>
-                    </div> */}
                 </div>
-
             </section>
 
             <div className='dropdown block md:hidden lg:hidden xl:hidden'>
@@ -96,10 +72,6 @@ const CurrentWeather = ({ data }) => {
                                     <span>Lufttryk</span>
                                     <span className='font-semibold'> {Math.round(data.main.pressure)} hPa</span>
                                 </li>
-                                {/*                                 <li>
-                                    <span>Regn</span>
-                                    <span className='font-semibold'> {Math.round(data.rain["1h"])} mm </span>
-                                </li> */}
                             </ul>
                         </div> : null}</AnimatePresence>
                 </div>

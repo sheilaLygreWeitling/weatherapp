@@ -4,6 +4,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 export const geoApiOptions = {
     method: 'GET',
     headers: {
+        'content-type': 'application/octet-stream',
         'X-RapidAPI-Key': `${API_KEY}`,
         'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
     }
