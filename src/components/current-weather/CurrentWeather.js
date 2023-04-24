@@ -56,10 +56,6 @@ const CurrentWeather = ({ data }) => {
                         <span>Lufttryk</span>
                         <span className='font-semibold'> {Math.round(data.main.pressure)} hPa</span>
                     </div>
-                    {/*                     <div>
-                        <span>Regn</span>
-                        <span className='font-semibold'> {Math.round(data.rain["1h"])} mm </span>
-                    </div> */}
                 </div>
 
             </section>
@@ -96,10 +92,6 @@ const CurrentWeather = ({ data }) => {
                                     <span>Lufttryk</span>
                                     <span className='font-semibold'> {Math.round(data.main.pressure)} hPa</span>
                                 </li>
-                                {/*                                 <li>
-                                    <span>Regn</span>
-                                    <span className='font-semibold'> {Math.round(data.rain["1h"])} mm </span>
-                                </li> */}
                             </ul>
                         </div> : null}</AnimatePresence>
                 </div>
