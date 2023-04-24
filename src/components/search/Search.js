@@ -5,24 +5,40 @@ import { geoApiOptions, GEO_API_URL } from "../../Api";
 const Search = ({ onSearchChange }) => {
     const [search, setSearch] = useState(null);
 
-    const loadOptions = (inputValue) => {
-        return fetch(
+    async function loadOptions(inputValue, map) {
+        const response = await fetch(
             `${GEO_API_URL}cities?&namePrefix=${inputValue}`,
             geoApiOptions
-        )
-            .then(response => response.json())
-            .then(response => {
+        );
+        const data = await response.json();
+        return {
+            options: data.data.map((city) => {
                 return {
-                    options: response.data.map((city) => {
-                        return {
-                            value: `${city.latitude} ${city.longitude}`,
-                            label: `${city.name}, ${city.countryCode}`,
-                        };
-                    }),
+                    value: `${city.latitude} ${city.longitude}`,
+                    label: `${city.name}, ${city.countryCode}`,
                 };
-            })
-            .catch(err => console.error(err));
-    };
+            }),
+
+            hasMore: data.data.length > 0,
+            additional: {
+                page: 1,
+            },
+        };
+    }
+
+    /* .then(response => response.json())
+.then(response => {
+return {
+    options: response.data.map((city) => {
+        return {
+            value: `${city.latitude} ${city.longitude}`,
+            label: `${city.name}, ${city.countryCode}`,
+        };
+    }),
+};
+})
+.catch(err => console.error(err));
+}; */
 
 
     const handleOnChange = (searchData) => {
